@@ -34,6 +34,7 @@ namespace Test
         public void TestServerEntityMethod()
         {
             ServerPreferencesControl control = new ServerPreferencesControl();
+            control.LoadDefaultConfig();
 
             ServerEntity entity = control.GetServerConfig();
             Assert.AreEqual(entity.Server, Database.SERVER, "获取默认服务器地址错误");

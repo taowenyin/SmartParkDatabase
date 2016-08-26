@@ -35,8 +35,8 @@ namespace Test
         {
             ParkMemberControl control = new ParkMemberControl();
 
-            //int id = control.AddParkMember("苏E84X76", 1);
-            //Assert.AreEqual(id > 0, true, "添加会员失败");
+            int id = control.AddParkMember("苏E84X76", 1);
+            Assert.AreEqual(id > 0, true, "添加会员失败");
 
             ViewMemberInfoEntity member = control.GetCurrentMemberInfo("苏E84X76", 1);
             Assert.IsNotNull(member, "获取会员信息失败");

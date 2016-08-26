@@ -34,7 +34,7 @@ namespace Test
         public void FiguringUserPayInfoTestMethod()
         {
             UserParkingControl control = new UserParkingControl();
-            ParkingPayInfoEntity entity = control.FiguringUserPayInfo(3);
+            ParkingPayInfoEntity entity = control.FiguringUserPayInfo(1);
             Assert.IsNotNull(entity, "计算用户费用失败");
 
             entity = control.UseParkingTicket(entity, 1);
@@ -44,7 +44,7 @@ namespace Test
         public void UserFinishPayTestMethod()
         {
             UserParkingControl control = new UserParkingControl();
-            int effect = control.UserFinishPay(3);
+            int effect = control.UserFinishPay(1);
             Assert.AreEqual(effect > 0, true, "更新支付状态失败");
         }
     }

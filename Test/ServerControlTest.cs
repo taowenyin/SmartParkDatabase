@@ -43,19 +43,5 @@ namespace Test
             Assert.AreEqual(entity.Password, Database.PASSWORD, "获取默认密码错误");
             Assert.AreEqual(entity.Database, Database.DATABASE, "获取默认数据库错误");
         }
-
-        [TestMethod]
-        public void TestServerEntityChangeMethod()
-        {
-            ServerEntity entity = new ServerEntity();
-            entity.Server = "127.0.0.1";
-            entity.Port = 0;
-            entity.User = "user";
-            entity.Password = "user";
-            entity.Database = "hello";
-
-            ServerPreferencesControl control = new ServerPreferencesControl();
-            control.SetServerConfig(entity);
-        }
     }
 }

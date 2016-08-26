@@ -143,8 +143,6 @@ namespace SmartParkDatabase.Control
                 database.Open();
             }
 
-            Console.WriteLine("find database");
-
             ICursor cursor = database.Query(ViewMemberInfoEntity.TableName, null,
                 ViewMemberInfoEntity.Fields.License + "='?' AND " + 
                 ViewMemberInfoEntity.Fields.ParkId + "=? AND NOW() > " + 
@@ -155,7 +153,6 @@ namespace SmartParkDatabase.Control
 
             while (cursor.MoveToNext())
             {
-                Console.WriteLine("has find data");
                 ViewMemberInfoEntity entity = new ViewMemberInfoEntity();
                 entity.Id = cursor.GetInt(ViewMemberInfoEntity.Fields.Id);
                 entity.License = cursor.GetString(ViewMemberInfoEntity.Fields.License);

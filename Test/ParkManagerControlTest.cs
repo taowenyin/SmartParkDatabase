@@ -8,6 +8,12 @@ namespace Test
     [TestClass]
     public class ParkManagerControlTest
     {
+        public ParkManagerControlTest()
+        {
+            SystemControl control = new SystemControl();
+            bool res = control.CheckDatabaseOrCreate();
+        }
+
         [TestMethod]
         public void RegisterManagerTestMethod()
         {

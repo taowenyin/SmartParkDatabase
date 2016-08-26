@@ -9,6 +9,12 @@ namespace Test
     [TestClass]
     public class ParkMemberTest
     {
+        public ParkMemberTest()
+        {
+            SystemControl control = new SystemControl();
+            bool res = control.CheckDatabaseOrCreate();
+        }
+
         [TestMethod]
         public void AddMemberTypeTestMethod()
         {

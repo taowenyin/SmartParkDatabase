@@ -7,6 +7,12 @@ namespace Test
     [TestClass]
     public class ParkTicketControlTest
     {
+        public ParkTicketControlTest()
+        {
+            SystemControl control = new SystemControl();
+            bool res = control.CheckDatabaseOrCreate();
+        }
+
         [TestMethod]
         public void AddTicketTypeTestMethod()
         {

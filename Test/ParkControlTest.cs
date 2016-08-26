@@ -14,6 +14,12 @@ namespace Test
     [TestClass]
     public class ParkControlTest
     {
+        public ParkControlTest()
+        {
+            SystemControl control = new SystemControl();
+            bool res = control.CheckDatabaseOrCreate();
+        }
+
         [TestMethod]
         public void TestRegisterParkMethod()
         {

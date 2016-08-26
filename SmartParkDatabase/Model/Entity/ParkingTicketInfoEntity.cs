@@ -132,7 +132,7 @@ namespace SmartParkDatabase.Model.Entity
             }
             if (this.useTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.UseTime, Convert.ToString(this.useTime));
+                data.Add(Fields.UseTime, this.useTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.type != DefaultValue.DINT)
             {

@@ -109,11 +109,11 @@ namespace SmartParkDatabase.Model.Entity
             }
             if (this.beginTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.BeginTime, Convert.ToString(this.beginTime));
+                data.Add(Fields.BeginTime, this.beginTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.endTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.EndTime, Convert.ToString(this.endTime));
+                data.Add(Fields.EndTime, this.endTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.memberId != DefaultValue.DINT)
             {

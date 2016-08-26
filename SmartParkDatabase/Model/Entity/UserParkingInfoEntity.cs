@@ -170,7 +170,7 @@ namespace SmartParkDatabase.Model.Entity
             }
             if (this.intoTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.IntoTime, Convert.ToString(this.intoTime));
+                data.Add(Fields.IntoTime, this.intoTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.intoPic != DefaultValue.DSTRING)
             {
@@ -178,7 +178,7 @@ namespace SmartParkDatabase.Model.Entity
             }
             if (this.outTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.OutTime, Convert.ToString(this.outTime));
+                data.Add(Fields.OutTime, this.outTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.outPic != DefaultValue.DSTRING)
             {

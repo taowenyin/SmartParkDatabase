@@ -109,11 +109,11 @@ namespace SmartParkDatabase.Model.Entity
             }
             if (this.loginTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.LoginTime, Convert.ToString(this.loginTime));
+                data.Add(Fields.LoginTime, this.loginTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.logoutTime != DefaultValue.DDATATIME)
             {
-                data.Add(Fields.LogoutTime, Convert.ToString(this.logoutTime));
+                data.Add(Fields.LogoutTime, this.logoutTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (this.managerId != DefaultValue.DINT)
             {

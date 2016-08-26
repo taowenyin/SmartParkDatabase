@@ -1,0 +1,27 @@
+version: alpha_v0.{build}
+configuration: Release
+services: mysql
+before_build:
+- ps: >-
+    nuget restore
+
+    $env:MYSQL_PWD="Password12!"
+
+    $cmd = '"C:\Program Files\MySql\MySQL Server 5.7\bin\mysql" -e "create database spslocal;" --user=root'
+
+    iex "& $cmd"
+build:
+  verbosity: minimal
+artifacts:
+- path: SmartParkDatabase\bin\Release
+  name: smartparkdatabase_$(appveyor_build_version)
+deploy:
+- provider: GitHub
+  tag: $(appveyor_build_version)
+  release: smartparkdatabase_$(appveyor_build_version)
+  auth_token:
+    secure: suCkyLyNzRHvwL46/CXjLdTJukroztvH+omv/KtZgW7cpoi8BhvAsgAwkEy1uBER
+  artifact: smartparkdatabase_$(appveyor_build_version)
+  draft: true
+  prerelease: false
+  force_update: true

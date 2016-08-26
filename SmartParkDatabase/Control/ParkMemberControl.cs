@@ -147,8 +147,8 @@ namespace SmartParkDatabase.Control
 
             ICursor cursor = database.Query(ViewMemberInfoEntity.TableName, null,
                 ViewMemberInfoEntity.Fields.License + "='?' AND " + 
-                ViewMemberInfoEntity.Fields.ParkId + "=? AND now() > " + 
-                ViewMemberInfoEntity.Fields.BeginTime + " AND now() < " + 
+                ViewMemberInfoEntity.Fields.ParkId + "=? AND NOW() > " + 
+                ViewMemberInfoEntity.Fields.BeginTime + " AND NOW() < " + 
                 ViewMemberInfoEntity.Fields.EndTime,
                 new string[] { license, Convert.ToString(parkId) },
                 null, null, null);

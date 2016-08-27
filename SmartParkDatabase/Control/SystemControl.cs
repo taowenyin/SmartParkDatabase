@@ -48,5 +48,10 @@ namespace SmartParkDatabase.Control
 
             return false;
         }
+
+        public void Close()
+        {
+            database.Close();
+        }
     }
 }

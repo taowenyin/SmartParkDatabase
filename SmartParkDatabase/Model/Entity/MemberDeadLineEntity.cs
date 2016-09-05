@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     class MemberDeadLineEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private Nullable<DateTime> beginTime = DefaultValue.DDATATIME;
-        private Nullable<DateTime> endTime = DefaultValue.DDATATIME;
-        private int memberId = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private Nullable<DateTime> beginTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private Nullable<DateTime> endTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private int memberId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_member_deadline";
 
@@ -103,19 +102,19 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.beginTime != DefaultValue.DDATATIME)
+            if (this.beginTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.BeginTime, this.beginTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.endTime != DefaultValue.DDATATIME)
+            if (this.endTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.EndTime, this.endTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.memberId != DefaultValue.DINT)
+            if (this.memberId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.MemberId, Convert.ToString(this.memberId));
             }

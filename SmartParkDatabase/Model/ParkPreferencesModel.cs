@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model
 {
@@ -16,7 +15,8 @@ namespace SmartParkDatabase.Model
 
         public ParkPreferencesModel()
         {
-            preference = SharedPreferences.GetInstance(Park.SHARED_PREFERENCES);
+            preference = SharedPreferences.GetInstance(
+                Common.SystemConfig.Park.SHARED_PREFERENCES);
             editor = preference.GetEditor();
         }
 

@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     class UserParkingInfoEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private string license = DefaultValue.DSTRING;
-        private Nullable<DateTime> intoTime = DefaultValue.DDATATIME;
-        private string intoPic = DefaultValue.DSTRING;
-        private Nullable<DateTime> outTime = DefaultValue.DDATATIME;
-        private string outPic = DefaultValue.DSTRING;
-        private int parkId = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string license = Common.SystemConfig.DefaultValue.DSTRING;
+        private Nullable<DateTime> intoTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private string intoPic = Common.SystemConfig.DefaultValue.DSTRING;
+        private Nullable<DateTime> outTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private string outPic = Common.SystemConfig.DefaultValue.DSTRING;
+        private int parkId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_user_parking_info";
 
@@ -160,31 +159,31 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.license != DefaultValue.DSTRING)
+            if (this.license != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.License, this.license);
             }
-            if (this.intoTime != DefaultValue.DDATATIME)
+            if (this.intoTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.IntoTime, this.intoTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.intoPic != DefaultValue.DSTRING)
+            if (this.intoPic != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.IntoPic, this.intoPic);
             }
-            if (this.outTime != DefaultValue.DDATATIME)
+            if (this.outTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.OutTime, this.outTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.outPic != DefaultValue.DSTRING)
+            if (this.outPic != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.OutPic, this.outPic);
             }
-            if (this.parkId != DefaultValue.DINT)
+            if (this.parkId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ParkId, Convert.ToString(this.parkId));
             }

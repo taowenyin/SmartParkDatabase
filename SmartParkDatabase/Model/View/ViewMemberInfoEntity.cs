@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.View
 {
     public class ViewMemberInfoEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private string license = DefaultValue.DSTRING;
-        private string name = DefaultValue.DSTRING;
-        private string phone = DefaultValue.DSTRING;
-        private int typeId = DefaultValue.DINT;
-        private string typeName = DefaultValue.DSTRING;
-        private int typeTime = DefaultValue.DINT;
-        private int typePrice = DefaultValue.DINT;
-        private int parkId = DefaultValue.DINT;
-        private int deadlineId = DefaultValue.DINT;
-        private Nullable<DateTime> beginTime = DefaultValue.DDATATIME;
-        private Nullable<DateTime> endTime = DefaultValue.DDATATIME;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string license = Common.SystemConfig.DefaultValue.DSTRING;
+        private string name = Common.SystemConfig.DefaultValue.DSTRING;
+        private string phone = Common.SystemConfig.DefaultValue.DSTRING;
+        private int typeId = Common.SystemConfig.DefaultValue.DINT;
+        private string typeName = Common.SystemConfig.DefaultValue.DSTRING;
+        private int typeTime = Common.SystemConfig.DefaultValue.DINT;
+        private int typePrice = Common.SystemConfig.DefaultValue.DINT;
+        private int parkId = Common.SystemConfig.DefaultValue.DINT;
+        private int deadlineId = Common.SystemConfig.DefaultValue.DINT;
+        private Nullable<DateTime> beginTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private Nullable<DateTime> endTime = Common.SystemConfig.DefaultValue.DDATATIME;
 
         public static string TableName = "sps_view_member_info";
 
@@ -255,51 +254,51 @@ namespace SmartParkDatabase.Model.View
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.Id));
             }
-            if (this.license != DefaultValue.DSTRING)
+            if (this.license != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.License, this.license);
             }
-            if (this.name != DefaultValue.DSTRING)
+            if (this.name != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Name, this.name);
             }
-            if (this.phone != DefaultValue.DSTRING)
+            if (this.phone != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Phone, this.phone);
             }
-            if (this.typeId != DefaultValue.DINT)
+            if (this.typeId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.TypeId, Convert.ToString(this.typeId));
             }
-            if (this.typeName != DefaultValue.DSTRING)
+            if (this.typeName != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.TypeName, Convert.ToString(this.typeName));
             }
-            if (this.typeTime != DefaultValue.DINT)
+            if (this.typeTime != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.TypeTime, Convert.ToString(this.typeTime));
             }
-            if (this.typePrice != DefaultValue.DINT)
+            if (this.typePrice != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.TypePrice, Convert.ToString(this.typePrice));
             }
-            if (this.parkId != DefaultValue.DINT)
+            if (this.parkId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ParkId, Convert.ToString(this.parkId));
             }
-            if (this.deadlineId != DefaultValue.DINT)
+            if (this.deadlineId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.DeadlineId, Convert.ToString(this.deadlineId));
             }
-            if (this.beginTime != DefaultValue.DDATATIME)
+            if (this.beginTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.BeginTime, Convert.ToString(this.beginTime));
             }
-            if (this.endTime != DefaultValue.DDATATIME)
+            if (this.endTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.EndTime, Convert.ToString(this.endTime));
             }

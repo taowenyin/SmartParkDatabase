@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model
 {
@@ -16,7 +15,7 @@ namespace SmartParkDatabase.Model
 
         public ServerPreferencesModel()
         {
-            preference = SharedPreferences.GetInstance(Database.SHARED_PREFERENCES);
+            preference = SharedPreferences.GetInstance(Common.SystemConfig.Database.SHARED_PREFERENCES);
             editor = preference.GetEditor();
         }
 
@@ -33,7 +32,7 @@ namespace SmartParkDatabase.Model
 
         public string GetServer()
         {
-            return preference.GetString(ServerEntity.Fields.Server, Database.SERVER);
+            return preference.GetString(ServerEntity.Fields.Server, Common.SystemConfig.Database.SERVER);
         }
 
         public void SetPort(int port)
@@ -44,7 +43,7 @@ namespace SmartParkDatabase.Model
 
         public int GetPort()
         {
-            return preference.GetInt(ServerEntity.Fields.Port, Database.PORT);
+            return preference.GetInt(ServerEntity.Fields.Port, Common.SystemConfig.Database.PORT);
         }
 
         public void SetUser(string user)
@@ -55,7 +54,7 @@ namespace SmartParkDatabase.Model
 
         public string GetUser()
         {
-            return preference.GetString(ServerEntity.Fields.User, Database.USER);
+            return preference.GetString(ServerEntity.Fields.User, Common.SystemConfig.Database.USER);
         }
 
         public void SetPassword(string password)
@@ -66,7 +65,7 @@ namespace SmartParkDatabase.Model
 
         public string GetPassword()
         {
-            return preference.GetString(ServerEntity.Fields.Password, Database.PASSWORD);
+            return preference.GetString(ServerEntity.Fields.Password, Common.SystemConfig.Database.PASSWORD);
         }
 
         public void SetDatabase(string database)
@@ -77,7 +76,7 @@ namespace SmartParkDatabase.Model
 
         public string GetDatabase()
         {
-            return preference.GetString(ServerEntity.Fields.Database, Database.DATABASE);
+            return preference.GetString(ServerEntity.Fields.Database, Common.SystemConfig.Database.DATABASE);
         }
     }
 }

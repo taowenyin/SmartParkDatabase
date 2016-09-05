@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     public class ManagerLoginEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private Nullable<DateTime> loginTime = DefaultValue.DDATATIME;
-        private Nullable<DateTime> logoutTime = DefaultValue.DDATATIME;
-        private int managerId = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private Nullable<DateTime> loginTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private Nullable<DateTime> logoutTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private int managerId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_manager_login";
 
@@ -103,19 +102,19 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.loginTime != DefaultValue.DDATATIME)
+            if (this.loginTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.LoginTime, this.loginTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.logoutTime != DefaultValue.DDATATIME)
+            if (this.logoutTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.LogoutTime, this.logoutTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.managerId != DefaultValue.DINT)
+            if (this.managerId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ManagerId, Convert.ToString(this.managerId));
             }

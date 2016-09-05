@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
@@ -16,12 +15,12 @@ namespace SmartParkDatabase.Model.Entity
             UNKNOWN = 3
         }
 
-        private int id = DefaultValue.DINT;
-        private string name = DefaultValue.DSTRING;
-        private string password = DefaultValue.DSTRING;
-        private string nickname = DefaultValue.DSTRING;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string name = Common.SystemConfig.DefaultValue.DSTRING;
+        private string password = Common.SystemConfig.DefaultValue.DSTRING;
+        private string nickname = Common.SystemConfig.DefaultValue.DSTRING;
         private ManagerType type = ManagerType.UNKNOWN;
-        private int parkId = DefaultValue.DINT;
+        private int parkId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_park_manager";
 
@@ -159,19 +158,19 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.name != DefaultValue.DSTRING)
+            if (this.name != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Name, this.name);
             }
-            if (this.password != DefaultValue.DSTRING)
+            if (this.password != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Password, this.password);
             }
-            if (this.nickname != DefaultValue.DSTRING)
+            if (this.nickname != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Nickname, this.nickname);
             }
@@ -186,7 +185,7 @@ namespace SmartParkDatabase.Model.Entity
                     data.Add(Fields.Type, ((int)ManagerType.DOORMAN).ToString());
                 }
             }
-            if (this.parkId != DefaultValue.DINT)
+            if (this.parkId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ParkId, Convert.ToString(this.parkId));
             }

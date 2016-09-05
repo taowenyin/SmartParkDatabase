@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
@@ -16,11 +15,11 @@ namespace SmartParkDatabase.Model.Entity
             UNKNOWN = 3
         }
 
-        private int id = DefaultValue.DINT;
-        private int hours = DefaultValue.DINT;
-        private int price = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private int hours = Common.SystemConfig.DefaultValue.DINT;
+        private int price = Common.SystemConfig.DefaultValue.DINT;
         private PayStatus status = PayStatus.UNKNOWN;
-        private int parkingId = DefaultValue.DINT;
+        private int parkingId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_parking_pay_info";
 
@@ -140,15 +139,15 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.hours != DefaultValue.DINT)
+            if (this.hours != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Hours, Convert.ToString(this.hours));
             }
-            if (this.price != DefaultValue.DINT)
+            if (this.price != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Price, Convert.ToString(this.price));
             }
@@ -163,7 +162,7 @@ namespace SmartParkDatabase.Model.Entity
                     data.Add(Fields.Status, ((int)PayStatus.HAS_PAY).ToString());
                 }
             }
-            if (this.parkingId != DefaultValue.DINT)
+            if (this.parkingId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ParkingId, Convert.ToString(this.parkingId));
             }

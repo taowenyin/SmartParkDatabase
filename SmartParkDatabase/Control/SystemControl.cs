@@ -27,6 +27,10 @@ namespace SmartParkDatabase.Control
             database = DatabaseFactory.CreateDatabase(config, DbConfig.DbType.MYSQL);
         }
 
+        /// <summary>
+        /// 验证数据库，如果没有数据库则创建数据库
+        /// </summary>
+        /// <returns>True：验证或创建成功，Flase：验证或创建失败</returns>
         public bool CheckDatabaseOrCreate()
         {
             try
@@ -49,6 +53,9 @@ namespace SmartParkDatabase.Control
             return false;
         }
 
+        /// <summary>
+        /// 关闭数据库
+        /// </summary>
         public void Close()
         {
             database.Close();

@@ -26,6 +26,13 @@ namespace SmartParkDatabase.Control
             database = DatabaseFactory.CreateDatabase(config, DbConfig.DbType.MYSQL);
         }
 
+        /// <summary>
+        /// 添加停车场的停车券类型
+        /// </summary>
+        /// <param name="parkId">停车场ID</param>
+        /// <param name="name">停车券名称</param>
+        /// <param name="freetime">停车券免费时长</param>
+        /// <returns>停车券ID</returns>
         public int AddParkingTicketType(int parkId, string name, int freetime)
         {
             TicketTypeEntity entity = new TicketTypeEntity();
@@ -46,6 +53,11 @@ namespace SmartParkDatabase.Control
             return Convert.ToInt32(insert);
         }
 
+        /// <summary>
+        /// 获取停车券信息
+        /// </summary>
+        /// <param name="typeId">停车券ID</param>
+        /// <returns>停车券信息</returns>
         public TicketTypeEntity GetParkingTicketInfo(int typeId)
         {
             TicketTypeEntity entity = null;

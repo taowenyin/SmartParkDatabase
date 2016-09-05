@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     class ParkCurrentSpacesEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private int count = DefaultValue.DINT;
-        private int parkId = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private int count = Common.SystemConfig.DefaultValue.DINT;
+        private int parkId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_park_current_spaces";
 
@@ -84,15 +83,15 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.count != DefaultValue.DINT)
+            if (this.count != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Count, Convert.ToString(this.count));
             }
-            if (this.parkId != DefaultValue.DINT)
+            if (this.parkId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.ParkId, Convert.ToString(this.parkId));
             }

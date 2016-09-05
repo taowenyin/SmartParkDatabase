@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartParkDatabase.Common
 {
-    public class System
+    public class SystemConfig
     {
         /// <summary>
         /// 系统常用的默认值

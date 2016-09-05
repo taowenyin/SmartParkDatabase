@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     class ParkingTicketInfoEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private string no = DefaultValue.DSTRING;
-        private Nullable<DateTime> useTime = DefaultValue.DDATATIME;
-        private int type = DefaultValue.DINT;
-        private int payId = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string no = Common.SystemConfig.DefaultValue.DSTRING;
+        private Nullable<DateTime> useTime = Common.SystemConfig.DefaultValue.DDATATIME;
+        private int type = Common.SystemConfig.DefaultValue.DINT;
+        private int payId = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_parking_ticket_info";
 
@@ -122,23 +121,23 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.no != DefaultValue.DSTRING)
+            if (this.no != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.No, this.no);
             }
-            if (this.useTime != DefaultValue.DDATATIME)
+            if (this.useTime != Common.SystemConfig.DefaultValue.DDATATIME)
             {
                 data.Add(Fields.UseTime, this.useTime.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (this.type != DefaultValue.DINT)
+            if (this.type != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Type, Convert.ToString(this.type));
             }
-            if (this.payId != DefaultValue.DINT)
+            if (this.payId != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.PayId, Convert.ToString(this.payId));
             }

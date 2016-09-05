@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     class ParkMemberEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private string license = DefaultValue.DSTRING;
-        private string name = DefaultValue.DSTRING;
-        private string phone = DefaultValue.DSTRING;
-        private int type = DefaultValue.DINT;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string license = Common.SystemConfig.DefaultValue.DSTRING;
+        private string name = Common.SystemConfig.DefaultValue.DSTRING;
+        private string phone = Common.SystemConfig.DefaultValue.DSTRING;
+        private int type = Common.SystemConfig.DefaultValue.DINT;
 
         public static string TableName = "sps_park_member";
 
@@ -122,23 +121,23 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.license != DefaultValue.DSTRING)
+            if (this.license != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.License, this.license);
             }
-            if (this.name != DefaultValue.DSTRING)
+            if (this.name != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Name, this.name);
             }
-            if (this.phone != DefaultValue.DSTRING)
+            if (this.phone != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Phone, this.phone);
             }
-            if (this.type != DefaultValue.DINT)
+            if (this.type != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Type, Convert.ToString(this.type));
             }

@@ -16,12 +16,20 @@ namespace SmartParkDatabase.Control
             model = new ParkPreferencesModel();
         }
 
+        /// <summary>
+        /// 设置停车场ID
+        /// </summary>
+        /// <param name="parkId">停车场ID</param>
         public void SetParkId(long parkId)
         {
             model.SetParkId(parkId);
             model.Commit();
         }
 
+        /// <summary>
+        /// 获取停车场ID
+        /// </summary>
+        /// <returns>停车场ID</returns>
         public long GetParkId()
         {
             return model.GetParkId();

@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     public class ServerEntity : IEntity
     {
-        private string server = DefaultValue.DSTRING;
-        private int port = DefaultValue.DINT;
-        private string user = DefaultValue.DSTRING;
-        private string password = DefaultValue.DSTRING;
-        private string database = DefaultValue.DSTRING;
+        private string server = Common.SystemConfig.DefaultValue.DSTRING;
+        private int port = Common.SystemConfig.DefaultValue.DINT;
+        private string user = Common.SystemConfig.DefaultValue.DSTRING;
+        private string password = Common.SystemConfig.DefaultValue.DSTRING;
+        private string database = Common.SystemConfig.DefaultValue.DSTRING;
 
         public string Server
         {
@@ -93,23 +92,23 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.server != DefaultValue.DSTRING)
+            if (this.server != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Server, this.server);
             }
-            if (this.port != DefaultValue.DINT)
+            if (this.port != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Port, Convert.ToString(this.port));
             }
-            if (this.user != DefaultValue.DSTRING)
+            if (this.user != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.User, this.user);
             }
-            if (this.password != DefaultValue.DSTRING)
+            if (this.password != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Password, this.password);
             }
-            if (this.database != DefaultValue.DSTRING)
+            if (this.database != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Database, this.database);
             }

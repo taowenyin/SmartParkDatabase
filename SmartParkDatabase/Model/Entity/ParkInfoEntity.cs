@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SmartParkDatabase.Common.System;
 
 namespace SmartParkDatabase.Model.Entity
 {
     public class ParkInfoEntity : IEntity
     {
-        private int id = DefaultValue.DINT;
-        private string name = DefaultValue.DSTRING;
-        private int freeTime = DefaultValue.DINT;
-        private int price = DefaultValue.DINT;
-        private int spaces = DefaultValue.DINT;
-        private string address = DefaultValue.DSTRING;
-        private double longitude = DefaultValue.DDOUBLE;
-        private double latitude = DefaultValue.DDOUBLE;
+        private int id = Common.SystemConfig.DefaultValue.DINT;
+        private string name = Common.SystemConfig.DefaultValue.DSTRING;
+        private int freeTime = Common.SystemConfig.DefaultValue.DINT;
+        private int price = Common.SystemConfig.DefaultValue.DINT;
+        private int spaces = Common.SystemConfig.DefaultValue.DINT;
+        private string address = Common.SystemConfig.DefaultValue.DSTRING;
+        private double longitude = Common.SystemConfig.DefaultValue.DDOUBLE;
+        private double latitude = Common.SystemConfig.DefaultValue.DDOUBLE;
 
         public static string TableName = "sps_park_info";
 
@@ -179,35 +178,35 @@ namespace SmartParkDatabase.Model.Entity
         {
             Dictionary<string, string> data = new Dictionary<string, string>();
 
-            if (this.id != DefaultValue.DINT)
+            if (this.id != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Id, Convert.ToString(this.id));
             }
-            if (this.name != DefaultValue.DSTRING)
+            if (this.name != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Name, this.name);
             }
-            if (this.freeTime != DefaultValue.DINT)
+            if (this.freeTime != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.FreeTime, Convert.ToString(this.freeTime));
             }
-            if (this.price != DefaultValue.DINT)
+            if (this.price != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Price, Convert.ToString(this.price));
             }
-            if (this.spaces != DefaultValue.DINT)
+            if (this.spaces != Common.SystemConfig.DefaultValue.DINT)
             {
                 data.Add(Fields.Spaces, Convert.ToString(this.spaces));
             }
-            if (this.address != DefaultValue.DSTRING)
+            if (this.address != Common.SystemConfig.DefaultValue.DSTRING)
             {
                 data.Add(Fields.Address, this.address);
             }
-            if (this.longitude != DefaultValue.DDOUBLE)
+            if (this.longitude != Common.SystemConfig.DefaultValue.DDOUBLE)
             {
                 data.Add(Fields.Longitude, Convert.ToString(this.longitude));
             }
-            if (this.latitude != DefaultValue.DDOUBLE)
+            if (this.latitude != Common.SystemConfig.DefaultValue.DDOUBLE)
             {
                 data.Add(Fields.Latitude, Convert.ToString(this.latitude));
             }

@@ -121,5 +121,16 @@ namespace SmartParkDatabase.Control
 
             return entity;
         }
+
+        /// <summary>
+        /// 获取当前停车场ID
+        /// </summary>
+        /// <returns>停车场ID</returns>
+        public long GetCurrentParkId()
+        {
+            ParkPreferencesControl control = new ParkPreferencesControl();
+            
+            return control.GetParkId();
+        }
     }
 }

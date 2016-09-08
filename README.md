@@ -4,7 +4,7 @@
 
 ## 1. 程序目录结构
 
-![程序目录结构](Screenshot/structure.png)
+![程序目录结构](ScreenShot/structure.png)
 
 > * Common：公共程序
 > 1. Error.cs：系统的错误信息

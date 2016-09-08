@@ -20,7 +20,6 @@ namespace Test
             SystemControl control = new SystemControl();
             bool res = control.CheckDatabaseOrCreate();
         }
-
         [TestMethod]
         public void TestRegisterParkMethod()
         {

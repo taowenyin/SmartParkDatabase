@@ -54,6 +54,42 @@ namespace SmartParkDatabase.Control
         }
 
         /// <summary>
+        /// 获取指定停车场的所有停车券类型
+        /// </summary>
+        /// <param name="parkId">停车场ID</param>
+        /// <returns>停车券类型列表</returns>
+        public List<TicketTypeEntity> GetAllParkingTicketType(int parkId)
+        {
+            List<TicketTypeEntity> ticketTypeList = null;
+
+            if (!database.IsOpen())
+            {
+                database.Open();
+            }
+
+            ICursor cursor = database.Query(TicketTypeEntity.TableName, null,
+                TicketTypeEntity.Fields.ParkId + "=?",
+                new string[] { Convert.ToString(parkId) },
+                null, null, null);
+            while (cursor.MoveToNext())
+            {
+                if (ticketTypeList == null)
+                {
+                    ticketTypeList = new List<TicketTypeEntity>();
+                }
+                TicketTypeEntity entity = new TicketTypeEntity();
+                entity.Id = cursor.GetInt(TicketTypeEntity.Fields.Id);
+                entity.Name = cursor.GetString(TicketTypeEntity.Fields.Name);
+                entity.FreeTime = cursor.GetInt(TicketTypeEntity.Fields.FreeTime);
+                entity.ParkId = cursor.GetInt(TicketTypeEntity.Fields.ParkId);
+
+                ticketTypeList.Add(entity);
+            }
+
+            return ticketTypeList;
+        }
+
+        /// <summary>
         /// 获取停车券信息
         /// </summary>
         /// <param name="typeId">停车券ID</param>

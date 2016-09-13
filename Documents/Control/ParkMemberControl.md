@@ -16,6 +16,13 @@
 public int AddMemberType(string name, int time, int price, int parkId)
 
 /// <summary>
+/// 获取指定停车场的所有会员类型
+/// </summary>
+/// <param name="parkId">停车场ID</param>
+/// <returns>会员类型列表</returns>
+public List<MemberTypeEntity> GetAllMemberType(int parkId)
+
+/// <summary>
 /// 获取会员ID
 /// </summary>
 /// <param name="name">会员名称</param>

@@ -15,6 +15,13 @@
 public int AddParkingTicketType(int parkId, string name, int freetime)
 
 /// <summary>
+/// 获取指定停车场的所有停车券类型
+/// </summary>
+/// <param name="parkId">停车场ID</param>
+/// <returns>停车券类型列表</returns>
+public List<TicketTypeEntity> GetAllParkingTicketType(int parkId)
+
+/// <summary>
 /// 获取停车券信息
 /// </summary>
 /// <param name="typeId">停车券ID</param>

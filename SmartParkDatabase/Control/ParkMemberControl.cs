@@ -57,6 +57,45 @@ namespace SmartParkDatabase.Control
         }
 
         /// <summary>
+        /// 获取指定停车场的所有会员类型
+        /// </summary>
+        /// <param name="parkId">停车场ID</param>
+        /// <returns>会员类型列表</returns>
+        public List<MemberTypeEntity> GetAllMemberType(int parkId)
+        {
+            List<MemberTypeEntity> memberTypeList = null;
+
+            if (!database.IsOpen())
+            {
+                database.Open();
+            }
+
+            ICursor cursor = database.Query(MemberTypeEntity.TableName, null, 
+                MemberTypeEntity.Fields.ParkId + "=?", 
+                new string[] { Convert.ToString(parkId) }, 
+                null, null, null);
+            while (cursor.MoveToNext())
+            {
+                if(memberTypeList == null)
+                {
+                    memberTypeList = new List<MemberTypeEntity>();
+                }
+                MemberTypeEntity entity = new MemberTypeEntity();
+                entity.Id = cursor.GetInt(MemberTypeEntity.Fields.Id);
+                entity.Name = cursor.GetString(MemberTypeEntity.Fields.Name);
+                entity.Time = cursor.GetInt(MemberTypeEntity.Fields.Time);
+                entity.Price = cursor.GetInt(MemberTypeEntity.Fields.Price);
+                entity.ParkId = cursor.GetInt(MemberTypeEntity.Fields.ParkId);
+
+                memberTypeList.Add(entity);
+            }
+
+            cursor.Close();
+
+            return memberTypeList;
+        }
+
+        /// <summary>
         /// 获取会员ID
         /// </summary>
         /// <param name="name">会员名称</param>

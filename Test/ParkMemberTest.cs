@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SmartParkDatabase.Control;
 using SmartParkDatabase.Model.Entity;
 using SmartParkDatabase.Model.View;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -46,6 +47,14 @@ namespace Test
 
             //ViewMemberInfoEntity member = control.GetCurrentMemberInfo("苏E84X76", 1);
             //Assert.IsNotNull(member, "获取会员信息失败");
+        }
+
+        [TestMethod]
+        public void GetAllMemberTypeTestMethod()
+        {
+            ParkMemberControl control = new ParkMemberControl();
+            List<MemberTypeEntity> memberTypeList = control.GetAllMemberType(1);
+            Assert.IsNotNull(memberTypeList);
         }
     }
 }

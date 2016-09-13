@@ -85,6 +85,7 @@ namespace SmartParkDatabase.Control
 
                 ticketTypeList.Add(entity);
             }
+            cursor.Close();
 
             return ticketTypeList;
         }

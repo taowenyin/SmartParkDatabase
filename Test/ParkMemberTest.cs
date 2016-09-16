@@ -38,6 +38,9 @@ namespace Test
 
             int id = control.AddParkMember("苏E84X76", 1);
             Assert.AreEqual(id > 0, true, "添加会员失败");
+
+            id = control.AddParkMember("苏E84X76", 1, "abc", "123456");
+            Assert.AreEqual(id > 0, true, "添加会员失败");
         }
 
         [TestMethod]

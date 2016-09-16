@@ -86,7 +86,7 @@ namespace SmartParkDatabase.Model.Entity
             public static string Id = "id";
             public static string License = "license";
             public static string Name = "name";
-            public static string Phone = "price";
+            public static string Phone = "phone";
             public static string Type = "type";
         }
 
